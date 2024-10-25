@@ -3,6 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { createPinia, PiniaVuePlugin } from 'pinia'
+
+Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
+
+new Vue({
+  el: '#app',
+  // otras opciones...
+  // ...
+  // cabe destacar que la misma instancia de  `pinia` puede ser
+  // usada en múltiples aplicaciones de Vue en la misma página
+  pinia,
+})
 
 Vue.config.productionTip = false
 
